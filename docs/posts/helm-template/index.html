@@ -127,29 +127,6 @@
             </li>
             
             
-            
-
-            
-            
-            
-            
-            
-
-            <li>
-            
-            
-                <span class="flex">
-                    <a href="/blog/posts/helm-tips/" class="gdoc-nav__entry ">
-                        Helm Tips
-                    </a>
-                </span>
-            
-            
-
-            
-            </li>
-            
-            
         
     </ul>
 
@@ -197,9 +174,9 @@
 
 <p>この記事は過去に <a href="https://qiita.com/keiSunagawa/items/db0db26579d918c81457">Qiita</a> で書いたものの転載です</p>
 <div class="gdoc-page__anchorwrap"><h2 id="helm">Helm<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#helm" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helm" href="#helm"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<p><a href="https://helm.sh/">https://helm.sh/</a>
-Helmはk8sにおけるパッケージマネージャーのようなもです
-k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます
+<p><a href="https://helm.sh/">https://helm.sh/</a><br>
+Helmはk8sにおけるパッケージマネージャーのようなもです<br>
+k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます<br>
 公式や誰かの作ったChartをinstallするほか、自分たちの作ってるアプリケーションのChartを作成することでマニフェストファイルの共通化やdeploy/rollbackを簡単にすることができます</p>
 <p>当記事では後者の用途を前提として進めます</p>
 <p>Helmの基礎を理解頂いてる方は <a href="#template">Template</a> までスキップして頂けると、今回の本題はそちらですので</p>
@@ -227,57 +204,56 @@ first-app/
 <div class="gdoc-page__anchorwrap"><h3 id="生成されるファイルディレクトリ">生成されるファイル/ディレクトリ<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#生成されるファイルディレクトリ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 生成されるファイル/ディレクトリ" href="#生成されるファイルディレクトリ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <ul>
 <li>
-<p>Chart.yaml
+<p>Chart.yaml<br>
 Chartの概要、対象のk8s API versionなどが記載されている</p>
 </li>
 <li>
-<p>charts
-Subchart(自身のChartが依存するChart)が含まれるディレクトリ
+<p>charts<br>
+Subchart(自身のChartが依存するChart)が含まれるディレクトリ<br>
 Subchartについての説明はこの記事では行いません(自分もまだ使ったことのない機能なので)</p>
 </li>
 <li>
-<p>templates
-今回の本題、マニフェストファイルのTemplateが格納されているディレクトリ
+<p>templates<br>
+今回の本題、マニフェストファイルのTemplateが格納されているディレクトリ<br>
 マニフェストファイルについての詳しい説明は後述</p>
 </li>
 <li>
-<p>values.yaml
-Templateで使える値のyaml
+<p>values.yaml<br>
+Templateで使える値のyaml<br>
 このファイルではデフォルト値を定義しておき、install/update時に環境に応じたファイルを渡すことでここで定義した値を差し替えることができる</p>
 </li>
 </ul>
 <div class="gdoc-page__anchorwrap"><h3 id="デバッグ">デバッグ<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#デバッグ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor デバッグ" href="#デバッグ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p><code>$ helm install . --debug --dry-run</code>
+<p><code>$ helm install . --debug --dry-run</code><br>
 とすることで作成中のTemplateに変数を展開したマニフェストファイルをみることができます</p>
 <div class="gdoc-page__anchorwrap"><h2 id="template">Template<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#template" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Template" href="#template"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<p>Chartを構成するk8sマニフェストはTemplateと呼ばれるファイルによって生成されます
-Templateはその名の通りマニフェストファイルのテンプレートで変数を埋め込んだり、関数を呼び出すことで環境に応じて変更される部分を抽象化することができます
+<p>Chartを構成するk8sマニフェストはTemplateと呼ばれるファイルによって生成されます<br>
+Templateはその名の通りマニフェストファイルのテンプレートで変数を埋め込んだり、関数を呼び出すことで環境に応じて変更される部分を抽象化することができます<br>
 この項目ではTemplateで使える様々な構文について説明します</p>
 <div class="gdoc-page__anchorwrap"><h3 id="基本的な構文">基本的な構文<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#基本的な構文" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 基本的な構文" href="#基本的な構文"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>Templateにおいて何れの構文も <code>{{ }}</code> に囲まれて表記されます
-<code>{{ }}</code> 以外の部分はただのk8sマニフェストです、つまりただのyamlです
-(ちなみに <a href="https://golang.org/pkg/text/template/">Go言語のTemplate機能</a> から派生しているようです)
-中括弧内側の前後にダッシュ <code>{{- -}}</code> をつけることができ、前に付けた場合はその部分より前の半角スペースを、後ろにつけた場合は改行コードを取り除くことができます
-これは値を展開しない構文に対して使われることがあります</p>
+<p>Templateにおいて何れの構文も <code>{{ }}</code> に囲まれて表記されます<br>
+<code>{{ }}</code> 以外の部分はただのk8sマニフェストです、つまりただのyamlです<br>
+(ちなみに <a href="https://golang.org/pkg/text/template/">Go言語のTemplate機能</a> から派生しているようです)<br>
+中括弧内側の前後にダッシュ <code>{{- -}}</code> をつけることができ、前後の改行を含めた空白文字をトリムします</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">hoge</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span>{{- $piyo<span class="w"> </span><span class="p">:</span>=<span class="w"> </span><span class="s2">&#34;aaa&#34;</span><span class="w"> </span>-}}<span class="w">
-</span><span class="w">  </span><span class="s2">&#34;fuga&#34;</span><span class="w">
+</span><span class="w">  </span>{{- $piyo<span class="w"> </span><span class="p">:</span>=<span class="w"> </span><span class="s2">&#34;aaa&#34;</span><span class="w"> </span>}}<span class="w">
+</span><span class="w">  </span>- <span class="s2">&#34;fuga&#34;</span><span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="c"># ↓↓展開されると↓↓</span><span class="w">
 </span><span class="w">
 </span><span class="w"></span><span class="k">hoge</span><span class="p">:</span><span class="w">
-</span><span class="w">  </span><span class="s2">&#34;fuga&#34;</span><span class="w">
+</span><span class="w">  </span>- <span class="s2">&#34;fuga&#34;</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="コメント">コメント<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#コメント" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor コメント" href="#コメント"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p><code>/* */</code> で囲まれた部分はコメント構文になります
+<p><code>/* */</code> で囲まれた部分はコメント構文になります<br>
 通常のプログラミング言語のコメントと同様で展開時には無視されます</p>
 <pre><code>{{- /* a comment */ -}}
 </code></pre><div class="gdoc-page__anchorwrap"><h3 id="変数">変数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 変数" href="#変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>変数には二種類あり、ルートオブジェクトからpathを辿って呼び出されるものとローカル変数の参照です
-「ルートオブジェクト」「ローカル変数」については勝手に名前をつけたものなので公式ではありません
+<p>変数には二種類あり、ルートオブジェクトからpathを辿って呼び出されるものとローカル変数の参照です<br>
+「ルートオブジェクト」「ローカル変数」については勝手に名前をつけたものなので公式ではありません<br>
 変数はそのまま参照先の値が展開されます</p>
 <div class="gdoc-page__anchorwrap"><h4 id="ルートオブジェクト">ルートオブジェクト<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ルートオブジェクト" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ルートオブジェクト" href="#ルートオブジェクト"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
-<p>Templateで呼び出せる様々な事前定義オブジェクトやvalues.yamlに定義された値を取り出すための <code>Values</code> オブジェクトへの参照を持つrootです
-後述する <code>_helpers.tpl</code> 内で定義できる名前付きtemplateや、range構文では呼び出し時に渡した値がルートオブジェクトとなります
+<p>Templateで呼び出せる様々な事前定義オブジェクトやvalues.yamlに定義された値を取り出すための <code>Values</code> オブジェクトへの参照を持つrootです<br>
+後述する <code>_helpers.tpl</code> 内で定義できる名前付きtemplateや、range構文では呼び出し時に渡した値がルートオブジェクトとなります<br>
 <code>{{ . }}</code> がルートオブジェクトそのものを表す記法となり、ここからpathを記載していきます</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># templates/service.yaml</span><span class="w">
 </span><span class="w"></span><span class="k">apiVersion</span><span class="p">:</span><span class="w"> </span>v1<span class="w">
@@ -288,7 +264,7 @@ Templateはその名の通りマニフェストファイルのテンプレート
 </span><span class="w"></span><span class="c"># values.yaml</span><span class="w">
 </span><span class="w"></span><span class="k">myapp</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="k">serviceName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;myservice&#34;</span><span class="w">
-</span></code></pre></div><p>Valuesの他にもルートオブジェクトには様々な事前定義オブジェクトがあり以下のドキュメントが一覧となります
+</span></code></pre></div><p>Valuesの他にもルートオブジェクトには様々な事前定義オブジェクトがあり以下のドキュメントが一覧となります<br>
 <a href="https://helm.sh/docs/chart_template_guide/#built-in-objects">https://helm.sh/docs/chart_template_guide/#built-in-objects</a></p>
 <div class="gdoc-page__anchorwrap"><h4 id="ローカル変数">ローカル変数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ローカル変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ローカル変数" href="#ローカル変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
 <p>各Templateファイル内で変数を定義することができます</p>
@@ -300,26 +276,26 @@ Templateはその名の通りマニフェストファイルのテンプレート
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>$volumeName<span class="w"> </span>}}<span class="w">
 </span></code></pre></div><p>見ての通りだとは思いますが <code>{{- $volumeName := &quot;myvolume&quot; -}}</code> で変数に束縛し <code>{{ $volumeName }}</code> で展開できます</p>
 <div class="gdoc-page__anchorwrap"><h3 id="関数">関数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#関数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 関数" href="#関数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>Template構文内では事前定義された様々な関数を使うことができます
-残念ながら定義の一覧のドキュメントは存在しないようです
-ただし、Helm側で定義されている関数の他、以下の関数の多くが実装されているそうです
-<a href="http://masterminds.github.io/sprig/">http://masterminds.github.io/sprig/</a>
-また、事前定義オブジェクトの中にも定義されている関数があります( <code>.Files.get</code> など)
+<p>Template構文内では事前定義された様々な関数を使うことができます<br>
+残念ながら定義の一覧のドキュメントは存在しないようです<br>
+ただし、Helm側で定義されている関数の他、以下の関数の多くが実装されているそうです<br>
+<a href="http://masterminds.github.io/sprig/">http://masterminds.github.io/sprig/</a><br>
+また、事前定義オブジェクトの中にも定義されている関数があります( <code>.Files.get</code> など)<br>
 関数の呼び出しは <code>関数名 引数1 [引数2 ...]</code> という形になります</p>
-<p>関数はパイプ(<code>|</code>) を使うことでチェインすることができます　</p>
+<p>関数はパイプ(<code>|</code>) を使うことでチェインすることができます</p>
 <pre><code>{{ .Files.get &quot;files/main.cf&quot; | nindent 4}}
-</code></pre><p>以下よく使う関数を抜粋して紹介します
-紹介の表記は <code>関数名 &lt;引数1の型&gt; [&lt;引数2の型&gt; ...]</code> という形にします
+</code></pre><p>以下よく使う関数を抜粋して紹介します<br>
+紹介の表記は <code>関数名 &lt;引数1の型&gt; [&lt;引数2の型&gt; ...]</code> という形にします<br>
 リファレンスがないので型といっても数値か文字列かオブジェクトとか、といった程度になってしまいますが…</p>
 <ul>
 <li>
-<p><code>nindent &lt;numer&gt; &lt;string&gt;</code>
-第2引数に渡した文字列の各行の先頭に第1引数の数値分だけ半角スペース(つまりインデント)を埋め込みます
+<p><code>nindent &lt;numer&gt; &lt;string&gt;</code><br>
+第2引数に渡した文字列の各行の先頭に第1引数の数値分だけ半角スペース(つまりインデント)を埋め込みます<br>
 yaml等の文字列を展開する場合にこの関数でインデントを調整することができます</p>
 </li>
 <li>
-<p><code>toYaml</code>
-オブジェクトをyaml形式で展開してくれます
+<p><code>toYaml</code><br>
+オブジェクトをyaml形式で展開してくれます<br>
 values.yamlに記載されているyamlを直接マニフェストファイルに展開したい場合などにこの関数を使います</p>
 </li>
 </ul>
@@ -365,7 +341,7 @@ values.yamlに記載されているyamlを直接マニフェストファイル�
 <li><code>tpl &lt;string&gt; &lt;object&gt;</code><br>
 第1引数の文字列をTemplateとして解釈し、第2引数をルートオブジェクトとして展開します<br>
 <code>_helpers.tpl</code> に定義しているものは <code>include</code> で展開すればTemplateとして解釈されるので<br>
-こちらは外部ファイルを取ってきたあとに適用する場合が多いです 
+こちらは外部ファイルを取ってきたあとに適用する場合が多いです<br>
 Template構文を展開するだけなのでyaml以外の文字列でも適用は可能です</li>
 </ul>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># values.yaml</span><span class="w">
@@ -396,11 +372,11 @@ Template構文を展開するだけなのでyaml以外の文字列でも適用�
 第1引数はファイルパスでChartのルートディレクトリ( <code>Chart.yaml</code> の置いてあるディレクトリ)からの相対パスを記載します</li>
 </ul>
 <div class="gdoc-page__anchorwrap"><h2 id="アクション">アクション<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#アクション" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor アクション" href="#アクション"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<p>関数のほか、Templateを制御するためいくつかのキーワードが用意されています
+<p>関数のほか、Templateを制御するためいくつかのキーワードが用意されています<br>
 一般的なプログラミング言語でいう <code>if</code> や <code>for</code> などにあたります、これをHelmではアクションと呼びます</p>
 <div class="gdoc-page__anchorwrap"><h3 id="ifelse">if/else<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ifelse" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor if/else" href="#ifelse"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>特に語ることのない一般的なif文です
-値が以下の場合にはすべて <code>false</code> として判定されます
+<p>特に語ることのない一般的なif文です<br>
+値が以下の場合にはすべて <code>false</code> として判定されます<br>
 <a href="https://helm.sh/docs/chart_template_guide/#if-else">https://helm.sh/docs/chart_template_guide/#if-else</a></p>
 <pre><code>A pipeline is evaluated as false if the value is:
 
@@ -417,8 +393,8 @@ an empty collection (map, slice, tuple, dict, array)
 1
 {{- end -}}
 </code></pre><div class="gdoc-page__anchorwrap"><h3 id="with">with<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#with" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor with" href="#with"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>引数に渡したオブジェクトをルートオブジェクトとしたスコープを展開できます
-引数に渡したオブジェクトが <code>if/else</code> アクションで紹介したfalseにあたる値の場合はwithブロック自体が展開されません、つまり簡易的な <code>if</code> としても使用できます
+<p>引数に渡したオブジェクトをルートオブジェクトとしたスコープを展開できます<br>
+引数に渡したオブジェクトが <code>if/else</code> アクションで紹介したfalseにあたる値の場合はwithブロック自体が展開されません、つまり簡易的な <code>if</code> としても使用できます<br>
 withブロック内で <code>.Files</code> オブジェクトなどの事前定義オブジェクトを参照する場合は外側で変数に束縛しましょう、このテクニックは <code>range</code> アクションでも使用できます</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># values.yaml</span><span class="w">
 </span><span class="w"></span><span class="k">configPaths</span><span class="p">:</span><span class="w">
@@ -433,7 +409,7 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 </span><span class="w"></span>{{<span class="w"> </span>$files.get<span class="w"> </span>.nginxConfPath<span class="w"> </span>|<span class="w"> </span>nindent<span class="w"> </span><span class="m">4</span><span class="w"> </span>}}<span class="w">
 </span><span class="w"></span>{{- end<span class="w"> </span>-}}<span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="range">range<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#range" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor range" href="#range"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p>引数に渡した配列でループを回します
+<p>引数に渡した配列でループを回します<br>
 ループ内のスコープでは配列の値自体がルートオブジェクトとなります</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># values.yaml</span><span class="w">
 </span><span class="w"></span><span class="k">configPaths</span><span class="p">:</span><span class="w">
@@ -458,21 +434,21 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 </span><span class="w">  </span><span class="k">main.cf</span><span class="p">:</span><span class="w"> </span><span class="sd">|
 </span><span class="sd">    # main.cfの内容</span><span class="w">
 </span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="template-1">template<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#template-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor template" href="#template-1"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
-<p><code>_helpers.tpl</code> に定義してある名前付きtemplateを展開します
+<p><code>_helpers.tpl</code> に定義してある名前付きtemplateを展開します<br>
 ただし、include関数と違いルートオブジェクトを渡すことができません</p>
 <div class="gdoc-page__anchorwrap"><h2 id="_helperstpl">_helpers.tpl<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#_helperstpl" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor _helpers.tpl" href="#_helperstpl"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
-<p>Chart内で共通で使うことのできるテンプレートスニペットを定義します、これは「名前付きテンプレート」と呼ばれます
+<p>Chart内で共通で使うことのできるテンプレートスニペットを定義します、これは「名前付きテンプレート」と呼ばれます<br>
 <code>values.yaml</code> が差し替え可能な変数、ローカル変数が定義したTemplateファイル内でのみ使える変数、_helpers.tplはチャート内で自由に使える変数、という形に捉えることができます</p>
-<p><code>define</code> アクションを使うことで名前付きテンプレートを定義することができます
-もちろん、テンプレートなので定義内で変数を展開したり、関数やアクションを使用することもできます
+<p><code>define</code> アクションを使うことで名前付きテンプレートを定義することができます<br>
+もちろん、テンプレートなので定義内で変数を展開したり、関数やアクションを使用することもできます<br>
 (ただし、呼び出し側で想定通りのオブジェクトを渡す必要があります、templateアクションではなくincluede関数を使う必要もあります)</p>
 <pre><code>{{- define &quot;myapp.namespace&quot; -}}
 {{ .Chart.Name }}-space
 {{- end }}
 </code></pre><hr>
-<p>Helm Template構文における基本的な構文は以上となります
-ひとまずこれだけ覚えていれば問題なくHelm Templateを読み書きできると思います
-少し特殊なものが多いのでGo Templateを触れていない(自分もそうだったのですが)人間から見るとなかなかつらいもの、特に関数周りは公式ドキュメントに記載や一覧がないのでとっつきにくいと感じたので今回の記事を書かせて頂きました
+<p>Helm Template構文における基本的な構文は以上となります<br>
+ひとまずこれだけ覚えていれば問題なくHelm Templateを読み書きできると思います<br>
+少し特殊なものが多いのでGo Templateを触れていない(自分もそうだったのですが)人間から見るとなかなかつらいもの、特に関数周りは公式ドキュメントに記載や一覧がないのでとっつきにくいと感じたので今回の記事を書かせて頂きました<br>
 この記事が誰かの役に立つことを願います</p>
 
 
@@ -523,7 +499,7 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 
 
 
-<script defer src="/blog/js/en.search.min.0f020600f3c1fc791f097482ad44b62087acd6d6033070865b88330e049aa9ba.js"></script>
+<script defer src="/blog/js/en.search.min.bb68f3c55598eb887ed74d0d74df18bf902fc91c40d779f66611b790a4a056ac.js"></script>
 
 
 

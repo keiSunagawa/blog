@@ -1,12 +1,11 @@
 ---
 title: "Helm Tips"
 date: 2020-12-06T13:49:40+09:00
-draft: false
+draft: true
 toc: true
-images:
 tags:
   - k8s
-  - dokcer
+  - helm
 ---
 この記事は [FOLIO Advent Calendar 2020](https://adventar.org/calendars/5553) 9日目の記事です  
 
@@ -25,6 +24,9 @@ k8sというinfraの上でhelmというパッケージマネージャーが扱�
 helmの世界ではパッケージはChartと呼ばれ、Chartリポジトリと呼ばれるhttp(s) serverにて管理されます  
 標準では [stableリポジトリ](https://charts.helm.sh/stable/index.yaml) が用意されていますが  
 ユーザ側で用意した独自リポジトリも使用することが可能です  
+
+HelmのChart構造やtemplate構文については以下の記事を参照ください  
+https://keisunagawa.github.io/blog/posts/helm-template/  
 
 ## Local Chart
 helmはChartリポジトリからChartをインストールする他、localに存在するChartをディレクトリ指定で  

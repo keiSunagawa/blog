@@ -1,4 +1,4 @@
-'use strict';(function(){const input=document.querySelector('#gdoc-search-input');const results=document.querySelector('#gdoc-search-results');input.addEventListener('focus',init);input.addEventListener('keyup',search);function init(){input.removeEventListener('focus',init);input.required=true;loadScript('/blog/js/flexsearch-ad47a5e1ee.min.js');loadScript('/blog/js/en.search-data.min.df2030859cde4bd6b78af3b7ca1e1a6682b229348437619c2124fd6d3bec65ab.js',function(){input.required=false;search();});}
+'use strict';(function(){const input=document.querySelector('#gdoc-search-input');const results=document.querySelector('#gdoc-search-results');input.addEventListener('focus',init);input.addEventListener('keyup',search);function init(){input.removeEventListener('focus',init);input.required=true;loadScript('/blog/js/flexsearch-ad47a5e1ee.min.js');loadScript('/blog/js/en.search-data.min.fec52a320948b4a24a11e51af35113abdb2a3f0ffa797306d30ca27c0daef339.js',function(){input.required=false;search();});}
 function search(){while(results.firstChild){results.removeChild(results.firstChild);}
 if(!input.value){console.log("empty")
 results.classList.remove("has-hits");return;}

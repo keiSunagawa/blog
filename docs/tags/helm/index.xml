@@ -17,12 +17,15 @@
       
       <guid>https://keisunagawa.github.io/blog/posts/helm-template/</guid>
       <description>この記事は過去に Qiita で書いたものの転載です
-Helm https://helm.sh/ Helmはk8sにおけるパッケージマネージャーのようなもです k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます 公式や誰かの作ったChartをinstallするほか、自分たちの作ってるアプリケーションのChartを作成することでマニフェストファイルの共通化やdeploy/rollbackを簡単にすることができます
+Helm https://helm.sh/
+Helmはk8sにおけるパッケージマネージャーのようなもです
+k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます
+公式や誰かの作ったChartをinstallするほか、自分たちの作ってるアプリケーションのChartを作成することでマニフェストファイルの共通化やdeploy/rollbackを簡単にすることができます
 当記事では後者の用途を前提として進めます
 Helmの基礎を理解頂いてる方は Template までスキップして頂けると、今回の本題はそちらですので
 Init Helmのインストール手順は公式を参照、以下はHelm/k8sをinstallしている前提で進めます
 Chartのスケルトン生成 $ helm create first-app Creating first-app $ tree first-app/ first-app/ ├── Chart.yaml ├── charts ├── templates │ ├── NOTES.txt │ ├── _helpers.tpl │ ├── deployment.yaml │ ├── ingress.yaml │ ├── service.yaml │ └── tests │ └── test-connection.yaml └── values.yaml 3 directories, 8 files helm create &amp;lt;chart name&amp;gt; でChartのスケルトンを生成できます
-生成されるファイル/ディレクトリ   Chart.yaml Chartの概要、対象のk8s API versionなどが記載されている</description>
+生成されるファイル/ディレクトリ   Chart.yaml</description>
     </item>
     
   </channel>
