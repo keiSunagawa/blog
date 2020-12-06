@@ -8,28 +8,28 @@
 
 <title>Helm Template Tips | Kerfume Blog</title>
 
-<link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
+<link rel="icon" href="/blog/favicon/favicon-32x32.png" type="image/x-icon">
 
-<link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-BoldItalic.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-Italic.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationMono.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/DroidSans.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/GeekdocIcons.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-BoldItalic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-Italic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationMono.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/DroidSans.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/GeekdocIcons.woff2" type="font/woff2" crossorigin="anonymous">
 
-<link rel="preload" href="/main-7a8a8dd1df.min.css" as="style">
-<link rel="stylesheet" href="/main-7a8a8dd1df.min.css" media="all">
+<link rel="preload" href="/blog/main-7a8a8dd1df.min.css" as="style">
+<link rel="stylesheet" href="/blog/main-7a8a8dd1df.min.css" media="all">
 
-<link rel="preload" href="/mobile-2eb10ce87d.min.css" as="style">
-<link rel="stylesheet" href="/mobile-2eb10ce87d.min.css" media="screen and (max-width: 45rem)">
+<link rel="preload" href="/blog/mobile-2eb10ce87d.min.css" as="style">
+<link rel="stylesheet" href="/blog/mobile-2eb10ce87d.min.css" media="screen and (max-width: 45rem)">
 
-<link rel="preload" href="/print-16259ad7b8.min.css" as="style">
-<link rel="stylesheet" href="/print-16259ad7b8.min.css" media="print">
+<link rel="preload" href="/blog/print-16259ad7b8.min.css" as="style">
+<link rel="stylesheet" href="/blog/print-16259ad7b8.min.css" media="print">
 
-<link rel="preload" href="/custom.css" as="style">
-<link rel="stylesheet" href="/custom.css" media="all">
+<link rel="preload" href="/blog/custom.css" as="style">
+<link rel="stylesheet" href="/blog/custom.css" media="all">
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -48,9 +48,9 @@
             <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
         </label>
         
-        <a class="gdoc-header__link" href="http://localhost">
+        <a class="gdoc-header__link" href="https://keisunagawa.github.io/blog/">
             <span class="gdoc-brand flex align-center">
-                <img class="gdoc-brand__img" src="/brand.svg" alt="" width=38 height=38>
+                <img class="gdoc-brand__img" src="/blog/brand.svg" alt="" width=38 height=38>
                 Kerfume Blog
             </span>
         </a>
@@ -116,7 +116,7 @@
             
             
                 <span class="flex">
-                    <a href="/posts/helm-template/" class="gdoc-nav__entry is-active">
+                    <a href="/blog/posts/helm-template/" class="gdoc-nav__entry is-active">
                         Helm Template Tips
                     </a>
                 </span>
@@ -139,7 +139,7 @@
             
             
                 <span class="flex">
-                    <a href="/posts/helm-tips/" class="gdoc-nav__entry ">
+                    <a href="/blog/posts/helm-tips/" class="gdoc-nav__entry ">
                         Helm Tips
                     </a>
                 </span>
@@ -196,16 +196,16 @@
 
 
 <p>この記事は過去に <a href="https://qiita.com/keiSunagawa/items/db0db26579d918c81457">Qiita</a> で書いたものの転載です</p>
-<div class="gdoc-page__anchorwrap"><h2 id="helm">Helm<a data-clipboard-text="http://localhost/posts/helm-template/#helm" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helm" href="#helm"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="helm">Helm<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#helm" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helm" href="#helm"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p><a href="https://helm.sh/">https://helm.sh/</a>
 Helmはk8sにおけるパッケージマネージャーのようなもです
 k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます
 公式や誰かの作ったChartをinstallするほか、自分たちの作ってるアプリケーションのChartを作成することでマニフェストファイルの共通化やdeploy/rollbackを簡単にすることができます</p>
 <p>当記事では後者の用途を前提として進めます</p>
 <p>Helmの基礎を理解頂いてる方は <a href="#template">Template</a> までスキップして頂けると、今回の本題はそちらですので</p>
-<div class="gdoc-page__anchorwrap"><h2 id="init">Init<a data-clipboard-text="http://localhost/posts/helm-template/#init" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Init" href="#init"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="init">Init<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#init" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Init" href="#init"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Helmのインストール手順は公式を参照、以下はHelm/k8sをinstallしている前提で進めます</p>
-<div class="gdoc-page__anchorwrap"><h3 id="chartのスケルトン生成">Chartのスケルトン生成<a data-clipboard-text="http://localhost/posts/helm-template/#chartのスケルトン生成" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Chartのスケルトン生成" href="#chartのスケルトン生成"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="chartのスケルトン生成">Chartのスケルトン生成<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#chartのスケルトン生成" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Chartのスケルトン生成" href="#chartのスケルトン生成"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <div class="highlight"><pre class="chroma"><code class="language-sh" data-lang="sh">$ helm create first-app
 Creating first-app
 $ tree first-app/
@@ -224,7 +224,7 @@ first-app/
 
 <span class="m">3</span> directories, <span class="m">8</span> files
 </code></pre></div><p><code>helm create &lt;chart name&gt;</code> でChartのスケルトンを生成できます</p>
-<div class="gdoc-page__anchorwrap"><h3 id="生成されるファイルディレクトリ">生成されるファイル/ディレクトリ<a data-clipboard-text="http://localhost/posts/helm-template/#生成されるファイルディレクトリ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 生成されるファイル/ディレクトリ" href="#生成されるファイルディレクトリ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="生成されるファイルディレクトリ">生成されるファイル/ディレクトリ<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#生成されるファイルディレクトリ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 生成されるファイル/ディレクトリ" href="#生成されるファイルディレクトリ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <ul>
 <li>
 <p>Chart.yaml
@@ -246,14 +246,14 @@ Templateで使える値のyaml
 このファイルではデフォルト値を定義しておき、install/update時に環境に応じたファイルを渡すことでここで定義した値を差し替えることができる</p>
 </li>
 </ul>
-<div class="gdoc-page__anchorwrap"><h3 id="デバッグ">デバッグ<a data-clipboard-text="http://localhost/posts/helm-template/#デバッグ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor デバッグ" href="#デバッグ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="デバッグ">デバッグ<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#デバッグ" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor デバッグ" href="#デバッグ"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p><code>$ helm install . --debug --dry-run</code>
 とすることで作成中のTemplateに変数を展開したマニフェストファイルをみることができます</p>
-<div class="gdoc-page__anchorwrap"><h2 id="template">Template<a data-clipboard-text="http://localhost/posts/helm-template/#template" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Template" href="#template"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="template">Template<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#template" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Template" href="#template"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Chartを構成するk8sマニフェストはTemplateと呼ばれるファイルによって生成されます
 Templateはその名の通りマニフェストファイルのテンプレートで変数を埋め込んだり、関数を呼び出すことで環境に応じて変更される部分を抽象化することができます
 この項目ではTemplateで使える様々な構文について説明します</p>
-<div class="gdoc-page__anchorwrap"><h3 id="基本的な構文">基本的な構文<a data-clipboard-text="http://localhost/posts/helm-template/#基本的な構文" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 基本的な構文" href="#基本的な構文"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="基本的な構文">基本的な構文<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#基本的な構文" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 基本的な構文" href="#基本的な構文"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>Templateにおいて何れの構文も <code>{{ }}</code> に囲まれて表記されます
 <code>{{ }}</code> 以外の部分はただのk8sマニフェストです、つまりただのyamlです
 (ちなみに <a href="https://golang.org/pkg/text/template/">Go言語のTemplate機能</a> から派生しているようです)
@@ -267,15 +267,15 @@ Templateはその名の通りマニフェストファイルのテンプレート
 </span><span class="w">
 </span><span class="w"></span><span class="k">hoge</span><span class="p">:</span><span class="w">
 </span><span class="w">  </span><span class="s2">&#34;fuga&#34;</span><span class="w">
-</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="コメント">コメント<a data-clipboard-text="http://localhost/posts/helm-template/#コメント" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor コメント" href="#コメント"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="コメント">コメント<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#コメント" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor コメント" href="#コメント"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p><code>/* */</code> で囲まれた部分はコメント構文になります
 通常のプログラミング言語のコメントと同様で展開時には無視されます</p>
 <pre><code>{{- /* a comment */ -}}
-</code></pre><div class="gdoc-page__anchorwrap"><h3 id="変数">変数<a data-clipboard-text="http://localhost/posts/helm-template/#変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 変数" href="#変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+</code></pre><div class="gdoc-page__anchorwrap"><h3 id="変数">変数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 変数" href="#変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>変数には二種類あり、ルートオブジェクトからpathを辿って呼び出されるものとローカル変数の参照です
 「ルートオブジェクト」「ローカル変数」については勝手に名前をつけたものなので公式ではありません
 変数はそのまま参照先の値が展開されます</p>
-<div class="gdoc-page__anchorwrap"><h4 id="ルートオブジェクト">ルートオブジェクト<a data-clipboard-text="http://localhost/posts/helm-template/#ルートオブジェクト" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ルートオブジェクト" href="#ルートオブジェクト"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
+<div class="gdoc-page__anchorwrap"><h4 id="ルートオブジェクト">ルートオブジェクト<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ルートオブジェクト" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ルートオブジェクト" href="#ルートオブジェクト"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
 <p>Templateで呼び出せる様々な事前定義オブジェクトやvalues.yamlに定義された値を取り出すための <code>Values</code> オブジェクトへの参照を持つrootです
 後述する <code>_helpers.tpl</code> 内で定義できる名前付きtemplateや、range構文では呼び出し時に渡した値がルートオブジェクトとなります
 <code>{{ . }}</code> がルートオブジェクトそのものを表す記法となり、ここからpathを記載していきます</p>
@@ -290,7 +290,7 @@ Templateはその名の通りマニフェストファイルのテンプレート
 </span><span class="w">  </span><span class="k">serviceName</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;myservice&#34;</span><span class="w">
 </span></code></pre></div><p>Valuesの他にもルートオブジェクトには様々な事前定義オブジェクトがあり以下のドキュメントが一覧となります
 <a href="https://helm.sh/docs/chart_template_guide/#built-in-objects">https://helm.sh/docs/chart_template_guide/#built-in-objects</a></p>
-<div class="gdoc-page__anchorwrap"><h4 id="ローカル変数">ローカル変数<a data-clipboard-text="http://localhost/posts/helm-template/#ローカル変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ローカル変数" href="#ローカル変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
+<div class="gdoc-page__anchorwrap"><h4 id="ローカル変数">ローカル変数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ローカル変数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor ローカル変数" href="#ローカル変数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h4></div>
 <p>各Templateファイル内で変数を定義することができます</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="w">  </span>{{- $volumeName<span class="w"> </span><span class="p">:</span>=<span class="w"> </span><span class="s2">&#34;myvolume&#34;</span><span class="w"> </span>-}}<span class="w">
 </span><span class="w">    </span><span class="k">volumeMounts</span><span class="p">:</span><span class="w">
@@ -299,7 +299,7 @@ Templateはその名の通りマニフェストファイルのテンプレート
 </span><span class="w">    </span><span class="k">volumes</span><span class="p">:</span><span class="w">
 </span><span class="w">      </span>- <span class="k">name</span><span class="p">:</span><span class="w"> </span>{{<span class="w"> </span>$volumeName<span class="w"> </span>}}<span class="w">
 </span></code></pre></div><p>見ての通りだとは思いますが <code>{{- $volumeName := &quot;myvolume&quot; -}}</code> で変数に束縛し <code>{{ $volumeName }}</code> で展開できます</p>
-<div class="gdoc-page__anchorwrap"><h3 id="関数">関数<a data-clipboard-text="http://localhost/posts/helm-template/#関数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 関数" href="#関数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="関数">関数<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#関数" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 関数" href="#関数"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>Template構文内では事前定義された様々な関数を使うことができます
 残念ながら定義の一覧のドキュメントは存在しないようです
 ただし、Helm側で定義されている関数の他、以下の関数の多くが実装されているそうです
@@ -395,10 +395,10 @@ Template構文を展開するだけなのでyaml以外の文字列でも適用�
 外部からファイルを文字列として取り込みます<br>
 第1引数はファイルパスでChartのルートディレクトリ( <code>Chart.yaml</code> の置いてあるディレクトリ)からの相対パスを記載します</li>
 </ul>
-<div class="gdoc-page__anchorwrap"><h2 id="アクション">アクション<a data-clipboard-text="http://localhost/posts/helm-template/#アクション" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor アクション" href="#アクション"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="アクション">アクション<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#アクション" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor アクション" href="#アクション"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>関数のほか、Templateを制御するためいくつかのキーワードが用意されています
 一般的なプログラミング言語でいう <code>if</code> や <code>for</code> などにあたります、これをHelmではアクションと呼びます</p>
-<div class="gdoc-page__anchorwrap"><h3 id="ifelse">if/else<a data-clipboard-text="http://localhost/posts/helm-template/#ifelse" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor if/else" href="#ifelse"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="ifelse">if/else<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#ifelse" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor if/else" href="#ifelse"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>特に語ることのない一般的なif文です
 値が以下の場合にはすべて <code>false</code> として判定されます
 <a href="https://helm.sh/docs/chart_template_guide/#if-else">https://helm.sh/docs/chart_template_guide/#if-else</a></p>
@@ -416,7 +416,7 @@ an empty collection (map, slice, tuple, dict, array)
 {{- else -}}
 1
 {{- end -}}
-</code></pre><div class="gdoc-page__anchorwrap"><h3 id="with">with<a data-clipboard-text="http://localhost/posts/helm-template/#with" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor with" href="#with"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+</code></pre><div class="gdoc-page__anchorwrap"><h3 id="with">with<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#with" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor with" href="#with"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>引数に渡したオブジェクトをルートオブジェクトとしたスコープを展開できます
 引数に渡したオブジェクトが <code>if/else</code> アクションで紹介したfalseにあたる値の場合はwithブロック自体が展開されません、つまり簡易的な <code>if</code> としても使用できます
 withブロック内で <code>.Files</code> オブジェクトなどの事前定義オブジェクトを参照する場合は外側で変数に束縛しましょう、このテクニックは <code>range</code> アクションでも使用できます</p>
@@ -432,7 +432,7 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 </span><span class="w">  </span><span class="k">nginx.conf</span><span class="p">:</span><span class="w"> </span>|<span class="w">
 </span><span class="w"></span>{{<span class="w"> </span>$files.get<span class="w"> </span>.nginxConfPath<span class="w"> </span>|<span class="w"> </span>nindent<span class="w"> </span><span class="m">4</span><span class="w"> </span>}}<span class="w">
 </span><span class="w"></span>{{- end<span class="w"> </span>-}}<span class="w">
-</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="range">range<a data-clipboard-text="http://localhost/posts/helm-template/#range" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor range" href="#range"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="range">range<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#range" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor range" href="#range"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p>引数に渡した配列でループを回します
 ループ内のスコープでは配列の値自体がルートオブジェクトとなります</p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="c"># values.yaml</span><span class="w">
@@ -457,10 +457,10 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 </span><span class="sd">    # nginx.confの内容</span><span class="w">
 </span><span class="w">  </span><span class="k">main.cf</span><span class="p">:</span><span class="w"> </span><span class="sd">|
 </span><span class="sd">    # main.cfの内容</span><span class="w">
-</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="template-1">template<a data-clipboard-text="http://localhost/posts/helm-template/#template-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor template" href="#template-1"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+</span></code></pre></div><div class="gdoc-page__anchorwrap"><h3 id="template-1">template<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#template-1" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor template" href="#template-1"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p><code>_helpers.tpl</code> に定義してある名前付きtemplateを展開します
 ただし、include関数と違いルートオブジェクトを渡すことができません</p>
-<div class="gdoc-page__anchorwrap"><h2 id="_helperstpl">_helpers.tpl<a data-clipboard-text="http://localhost/posts/helm-template/#_helperstpl" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor _helpers.tpl" href="#_helperstpl"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="_helperstpl">_helpers.tpl<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-template/#_helperstpl" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor _helpers.tpl" href="#_helperstpl"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Chart内で共通で使うことのできるテンプレートスニペットを定義します、これは「名前付きテンプレート」と呼ばれます
 <code>values.yaml</code> が差し替え可能な変数、ローカル変数が定義したTemplateファイル内でのみ使える変数、_helpers.tplはチャート内で自由に使える変数、という形に捉えることができます</p>
 <p><code>define</code> アクションを使うことで名前付きテンプレートを定義することができます
@@ -523,11 +523,11 @@ withブロック内で <code>.Files</code> オブジェクトなどの事前定�
 
 
 
-<script defer src="/js/en.search.min.fbcaabcdedc3ce272218d842c728d1aa136a41656ac42661d8c48a98fc5b8e14.js"></script>
+<script defer src="/blog/js/en.search.min.0f020600f3c1fc791f097482ad44b62087acd6d6033070865b88330e049aa9ba.js"></script>
 
 
 
-<script defer src="/js/clipboard-af8ab36589.min.js"></script>
+<script defer src="/blog/js/clipboard-af8ab36589.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         var clipboard = new ClipboardJS('.clip');

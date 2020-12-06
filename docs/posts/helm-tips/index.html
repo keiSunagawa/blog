@@ -8,28 +8,28 @@
 
 <title>Helm Tips | Kerfume Blog</title>
 
-<link rel="icon" href="/favicon/favicon-32x32.png" type="image/x-icon">
+<link rel="icon" href="/blog/favicon/favicon-32x32.png" type="image/x-icon">
 
-<link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-BoldItalic.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationSans-Italic.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/LiberationMono.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/DroidSans.woff2" type="font/woff2" crossorigin="anonymous">
-<link rel="preload" as="font" href="/fonts/GeekdocIcons.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-Bold.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-BoldItalic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationSans-Italic.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/LiberationMono.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/DroidSans.woff2" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" as="font" href="/blog/fonts/GeekdocIcons.woff2" type="font/woff2" crossorigin="anonymous">
 
-<link rel="preload" href="/main-7a8a8dd1df.min.css" as="style">
-<link rel="stylesheet" href="/main-7a8a8dd1df.min.css" media="all">
+<link rel="preload" href="/blog/main-7a8a8dd1df.min.css" as="style">
+<link rel="stylesheet" href="/blog/main-7a8a8dd1df.min.css" media="all">
 
-<link rel="preload" href="/mobile-2eb10ce87d.min.css" as="style">
-<link rel="stylesheet" href="/mobile-2eb10ce87d.min.css" media="screen and (max-width: 45rem)">
+<link rel="preload" href="/blog/mobile-2eb10ce87d.min.css" as="style">
+<link rel="stylesheet" href="/blog/mobile-2eb10ce87d.min.css" media="screen and (max-width: 45rem)">
 
-<link rel="preload" href="/print-16259ad7b8.min.css" as="style">
-<link rel="stylesheet" href="/print-16259ad7b8.min.css" media="print">
+<link rel="preload" href="/blog/print-16259ad7b8.min.css" as="style">
+<link rel="stylesheet" href="/blog/print-16259ad7b8.min.css" media="print">
 
-<link rel="preload" href="/custom.css" as="style">
-<link rel="stylesheet" href="/custom.css" media="all">
+<link rel="preload" href="/blog/custom.css" as="style">
+<link rel="stylesheet" href="/blog/custom.css" media="all">
 
 <!-- Made with Geekdoc theme https://github.com/thegeeklab/hugo-geekdoc -->
 
@@ -48,9 +48,9 @@
             <svg class="icon arrow-back"><use xlink:href="#arrow_back"></use></svg>
         </label>
         
-        <a class="gdoc-header__link" href="http://localhost">
+        <a class="gdoc-header__link" href="https://keisunagawa.github.io/blog/">
             <span class="gdoc-brand flex align-center">
-                <img class="gdoc-brand__img" src="/brand.svg" alt="" width=38 height=38>
+                <img class="gdoc-brand__img" src="/blog/brand.svg" alt="" width=38 height=38>
                 Kerfume Blog
             </span>
         </a>
@@ -116,7 +116,7 @@
             
             
                 <span class="flex">
-                    <a href="/posts/helm-template/" class="gdoc-nav__entry ">
+                    <a href="/blog/posts/helm-template/" class="gdoc-nav__entry ">
                         Helm Template Tips
                     </a>
                 </span>
@@ -139,7 +139,7 @@
             
             
                 <span class="flex">
-                    <a href="/posts/helm-tips/" class="gdoc-nav__entry is-active">
+                    <a href="/blog/posts/helm-tips/" class="gdoc-nav__entry is-active">
                         Helm Tips
                     </a>
                 </span>
@@ -198,7 +198,7 @@
 <p>この記事は <a href="https://adventar.org/calendars/5553">FOLIO Advent Calendar 2020</a> 9日目の記事です</p>
 <p>FOLIOでは現在k8sを利用した新しいアプリケーション基盤を検証しています<br>
 その中でk8sマニフェストを管理する上で欠かせないツール <a href="https://helm.sh/">Helm</a> についての知見を少しだけ共有しようと思います</p>
-<div class="gdoc-page__anchorwrap"><h2 id="helmって">Helmって？<a data-clipboard-text="http://localhost/posts/helm-tips/#helmって" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helmって？" href="#helmって"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="helmって">Helmって？<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#helmって" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Helmって？" href="#helmって"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p><a href="https://helm.sh/">https://helm.sh/</a><br>
 k8s上で動くパッケージマネージャ<br>
 パッケージマネージャとはあるinfraの上で動くアプリケーションの<br>
@@ -208,11 +208,11 @@ k8s上で動くパッケージマネージャ<br>
 <p>helmの世界ではパッケージはChartと呼ばれ、Chartリポジトリと呼ばれるhttp(s) serverにて管理されます<br>
 標準では <a href="https://charts.helm.sh/stable/index.yaml">stableリポジトリ</a> が用意されていますが<br>
 ユーザ側で用意した独自リポジトリも使用することが可能です</p>
-<div class="gdoc-page__anchorwrap"><h2 id="local-chart">Local Chart<a data-clipboard-text="http://localhost/posts/helm-tips/#local-chart" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Local Chart" href="#local-chart"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="local-chart">Local Chart<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#local-chart" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Local Chart" href="#local-chart"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>helmはChartリポジトリからChartをインストールする他、localに存在するChartをディレクトリ指定で<br>
 直接インストールすることも可能です<br>
 この方法は検証段階や、privateなChartリポジトリを建てる環境が存在しない場合などに役に立ちます</p>
-<div class="gdoc-page__anchorwrap"><h2 id="install-tips">Install Tips<a data-clipboard-text="http://localhost/posts/helm-tips/#install-tips" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install Tips" href="#install-tips"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="install-tips">Install Tips<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#install-tips" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor Install Tips" href="#install-tips"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>helm Chartは <code>helm install &lt;release名&gt; &lt;chart名&gt;</code> コマンドによってk8sクラスタ上へインストールします<br>
 またインストール済みのChartについては <code>helm upgrade</code> コマンドでversionを更新することができます<br>
 <code>&lt;release名&gt;</code> が違う場合は同じChartを複数インストールすることも可能です、ただしこの場合別名Chart同士でresource名の<br>
@@ -253,14 +253,14 @@ versionというのはChart自身のversionのことでdocker imageのversionな
 </tr>
 </tbody>
 </table>
-<div class="gdoc-page__anchorwrap"><h2 id="依存chart">依存Chart<a data-clipboard-text="http://localhost/posts/helm-tips/#依存chart" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 依存Chart" href="#依存chart"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="依存chart">依存Chart<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#依存chart" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 依存Chart" href="#依存chart"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>Chartは他のChartへ依存することができ、そのChartをインストールした場合は依存Chartも一緒にインストールされます<br>
 依存定義はChart.yamlに記載されます(古いChartであれば <code>requirements.yaml</code> というファイルに記載されていますが、こちらは現在 <code>deprecated</code> です)<br>
 何も指定しない場合、依存Chartは常にインストールされますが、<code>condition</code> もしくは <code>tags</code> キーを利用することでユーザ側に利用の有無を移譲することができます</p>
 <p>依存chartの条件については少し複雑なので以下のソースを参照しながら説明します<br>
 よければvalues.yamlの値を書き換え、実際の挙動を確認してください<br>
 <a href="https://github.com/keiSunagawa/helm-chart-playground/tree/master/dependency-example">https://github.com/keiSunagawa/helm-chart-playground/tree/master/dependency-example</a></p>
-<div class="gdoc-page__anchorwrap"><h3 id="condition">condition<a data-clipboard-text="http://localhost/posts/helm-tips/#condition" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor condition" href="#condition"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="condition">condition<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#condition" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor condition" href="#condition"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p><a href="https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/Chart.yaml#L9">https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/Chart.yaml#L9</a><br>
 <a href="https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/values.yaml#L2">https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/values.yaml#L2</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">dependencies</span><span class="p">:</span><span class="w">
@@ -278,7 +278,7 @@ versionというのはChart自身のversionのことでdocker imageのversionな
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">condition</span><span class="p">:</span><span class="w"> </span>subChart3.enabled<span class="p">,</span>subChart3.dev<span class="w">
 </span></code></pre></div><p>この場合は <code>subChart3.enabled</code> がnullである場合は <code>subChart3.dev</code> が代わりに参照されます<br>
 どちらのキーもnullだった場合はtrueとして判定されます</p>
-<div class="gdoc-page__anchorwrap"><h3 id="tags">tags<a data-clipboard-text="http://localhost/posts/helm-tips/#tags" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor tags" href="#tags"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
+<div class="gdoc-page__anchorwrap"><h3 id="tags">tags<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#tags" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor tags" href="#tags"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h3></div>
 <p><a href="https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/Chart.yaml#L13">https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/Chart.yaml#L13</a><br>
 <a href="https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/values.yaml#L4">https://github.com/keiSunagawa/helm-chart-playground/blob/master/dependency-example/main-chart/values.yaml#L4</a></p>
 <div class="highlight"><pre class="chroma"><code class="language-yaml" data-lang="yaml">- <span class="k">name</span><span class="p">:</span><span class="w"> </span>sub-chart<span class="m">-2</span><span class="w">
@@ -304,7 +304,7 @@ versionというのはChart自身のversionのことでdocker imageのversionな
 </ul>
 </li>
 </ul>
-<div class="gdoc-page__anchorwrap"><h2 id="マニフェストの検証">マニフェストの検証<a data-clipboard-text="http://localhost/posts/helm-tips/#マニフェストの検証" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor マニフェストの検証" href="#マニフェストの検証"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="マニフェストの検証">マニフェストの検証<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#マニフェストの検証" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor マニフェストの検証" href="#マニフェストの検証"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p><code>helm template</code> コマンドを利用することでk8sクラスタへChartをインストールすることなくマニフェストの検証をすることができます<br>
 <code>-f</code> で本番環境で利用する <code>values.yaml</code> を引き渡せば本番適用時のものとほぼ同様のマニフェストを取得することができます<br>
 <code>helm template</code> コマンドはtemplateが正しいyamlに展開されなかった場合にfailします<br>
@@ -317,7 +317,7 @@ kind: Service
 kind: Deployment
 kind: Pod
 </code></pre></div><hr>
-<div class="gdoc-page__anchorwrap"><h2 id="終わりに">終わりに<a data-clipboard-text="http://localhost/posts/helm-tips/#終わりに" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 終わりに" href="#終わりに"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
+<div class="gdoc-page__anchorwrap"><h2 id="終わりに">終わりに<a data-clipboard-text="https://keisunagawa.github.io/blog/posts/helm-tips/#終わりに" class="gdoc-page__anchor gdoc-page__anchor--right clip" aria-label="Anchor 終わりに" href="#終わりに"><svg class="icon link"><use xlink:href="#link"></use></svg></a></h2></div>
 <p>helmはk8sを使う上で欠かせないツールです<br>
 今回紹介した機能の他にもライフサイクルhookとなる <code>helm hook</code> や、インストールしたChartをロールバックする<br>
 機能などが提供されており、単なるパッケージマネージャ以上の働きを期待することができます</p>
@@ -372,11 +372,11 @@ kind: Pod
 
 
 
-<script defer src="/js/en.search.min.fbcaabcdedc3ce272218d842c728d1aa136a41656ac42661d8c48a98fc5b8e14.js"></script>
+<script defer src="/blog/js/en.search.min.0f020600f3c1fc791f097482ad44b62087acd6d6033070865b88330e049aa9ba.js"></script>
 
 
 
-<script defer src="/js/clipboard-af8ab36589.min.js"></script>
+<script defer src="/blog/js/clipboard-af8ab36589.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function(event) {
         var clipboard = new ClipboardJS('.clip');

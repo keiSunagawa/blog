@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>k8s on Kerfume Blog</title>
-    <link>http://localhost/tags/k8s/</link>
+    <link>https://keisunagawa.github.io/blog/tags/k8s/</link>
     <description>Recent content in k8s on Kerfume Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 06 Dec 2020 17:31:55 +0900</lastBuildDate>
     
-	<atom:link href="http://localhost/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://keisunagawa.github.io/blog/tags/k8s/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Helm Template Tips</title>
-      <link>http://localhost/posts/helm-template/</link>
+      <link>https://keisunagawa.github.io/blog/posts/helm-template/</link>
       <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
       
-      <guid>http://localhost/posts/helm-template/</guid>
+      <guid>https://keisunagawa.github.io/blog/posts/helm-template/</guid>
       <description>この記事は過去に Qiita で書いたものの転載です
 Helm https://helm.sh/ Helmはk8sにおけるパッケージマネージャーのようなもです k8sのService, Deployment, ConfigMap, etcをひとつのまとまり(Chartと呼ばれる)として構成し、それらのk8sクラスタへのinstall/update/deleteなどの責務を担当してくれます 公式や誰かの作ったChartをinstallするほか、自分たちの作ってるアプリケーションのChartを作成することでマニフェストファイルの共通化やdeploy/rollbackを簡単にすることができます
 当記事では後者の用途を前提として進めます
@@ -27,10 +27,10 @@ Chartのスケルトン生成 $ helm create first-app Creating first-app $ tree 
     
     <item>
       <title>Helm Tips</title>
-      <link>http://localhost/posts/helm-tips/</link>
+      <link>https://keisunagawa.github.io/blog/posts/helm-tips/</link>
       <pubDate>Sun, 06 Dec 2020 13:49:40 +0900</pubDate>
       
-      <guid>http://localhost/posts/helm-tips/</guid>
+      <guid>https://keisunagawa.github.io/blog/posts/helm-tips/</guid>
       <description>この記事は FOLIO Advent Calendar 2020 9日目の記事です
 FOLIOでは現在k8sを利用した新しいアプリケーション基盤を検証しています
 その中でk8sマニフェストを管理する上で欠かせないツール Helm についての知見を少しだけ共有しようと思います
