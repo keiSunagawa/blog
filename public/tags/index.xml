@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Kerfume Blog</title>
+    <link>http://localhost/tags/</link>
+    <description>Recent content in Tags on Kerfume Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 06 Dec 2020 17:31:55 +0900</lastBuildDate>
+    
+	<atom:link href="http://localhost/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>helm</title>
+      <link>http://localhost/tags/helm/</link>
+      <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
+      
+      <guid>http://localhost/tags/helm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>http://localhost/tags/k8s/</link>
+      <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
+      
+      <guid>http://localhost/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dokcer</title>
+      <link>http://localhost/tags/dokcer/</link>
+      <pubDate>Sun, 06 Dec 2020 13:49:40 +0900</pubDate>
+      
+      <guid>http://localhost/tags/dokcer/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
