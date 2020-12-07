@@ -7,7 +7,7 @@ tags:
   - k8s
   - helm
 ---
-この記事は [FOLIO Advent Calendar 2020](https://adventar.org/calendars/5553) 9日目の記事です  
+この記事は [FOLIO Advent Calendar 2020](https://adventar.org/calendars/5553) 8日目の記事です  
 
 FOLIOでは現在k8sを利用した新しいアプリケーション基盤を検証しています  
 その中でk8sマニフェストを管理する上で欠かせないツール [Helm](https://helm.sh/) についての知見を少しだけ共有しようと思います  
