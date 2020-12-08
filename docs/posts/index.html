@@ -128,6 +128,29 @@
             </li>
             
             
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
+                    <a href="/blog/posts/helm-tips/" class="gdoc-nav__entry ">
+                        Helm Tips
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
         
     </ul>
 
@@ -185,6 +208,54 @@ Chartのスケルトン生成 $ helm create first-app Creating first-app $ tree 
             
         </article>
     
+        <article class="gdoc-markdown gdoc-post">
+            <header class="gdoc-post__header">
+                <h1 class="gdoc-post__title"><a href="/blog/posts/helm-tips/">Helm Tips</a></h1>
+                <div class="gdoc-post__date">
+                    <svg class="icon date"><use xlink:href="#date"></use></svg>
+                    <time datetime="2020-12-06T13:49:40&#43;09:00">
+                        
+                        Dec 6, 2020
+                    </time>
+                </div>
+            </header>
+            <section>
+                この記事は FOLIO Advent Calendar 2020 8日目の記事です
+FOLIOでは現在k8sを利用した新しいアプリケーション基盤を検証しています
+その中でk8sマニフェストを管理する上で欠かせないツール Helm についての知見を少しだけ共有しようと思います
+Helmって？ https://helm.sh/
+k8s上で動くパッケージマネージャ
+パッケージマネージャとはあるinfraの上で動くアプリケーションの
+インストール/アンインストールの管理などを行ってくれるソフトウェアのことを指します
+k8sというinfraの上でhelmというパッケージマネージャーが扱う「アプリケーション」は
+マニフェストファイルの集合となります
+helmの世界ではパッケージはChartと呼ばれ、Chartリポジトリと呼ばれるhttp(s) serverにて管理されます
+標準では stableリポジトリ が用意されていますが
+ユーザ側で用意した独自リポジトリも使用することが可能です
+HelmのChart構造やtemplate構文については以下の記事を参照ください
+https://keisunagawa.github.io/blog/posts/helm-template/
+Local Chart helmはChartリポジトリからChartをインストールする他、localに存在するChartをディレクトリ指定で
+直接インストールすることも可能です
+この方法は検証段階や、privateなChartリポジトリを建てる環境が存在しない場合などに役に立ちます
+Install Tips helm Chartは helm install &lt;release名&gt; &lt;chart名&gt; コマンドによってk8sクラスタ上へインストールします
+またインストール済みのChartについては helm upgrade コマンドでversionを更新することができます
+&lt;release名&gt; が違う場合は同じChartを複数インストールすることも可能です、ただしこの場合別名Chart同士でresource名の
+コンフリクトが発生しないことを前提としています
+versionというのはChart自身のversionのことでdocker imageのversionなどはChartのversionもしくはinstall時に
+引き渡す values.yaml の値によって決定されます、つまりChartの内容次第ということになります
+helm upgrade --install とすることでinstall操作とupgrade操作を同時に行えます
+これは新規Chartの場合install、インストール済みChartの場合はupgradeを行うというコマンドになります
+Local Chartは helm install &lt;release名&gt; &lt;chart dir&gt; とすることでインストールすることができます
+以下install(upgrade)時によく使う引数をいくつかpickupします
+   flag      --create-namespace -nで指定したnamespaceが存在しない場合自動的に作成します   --atomic 何れかのマニフェスト適用に失敗した場合、install(upgrade)コマンド発行前の状態に戻します   --timeout install(upgrade)タイムアウトまでの時間を設定します外部リソースと連動したk8s resourceを発行するChartなどはタイムアウト値を伸ばすことを推奨します   --wait Podリソースなどが稼働状態になるのまでwaitしますただし、timeout時間までに稼働状態にならなかった場合はfailとなります   --values -f 利用するvalues.
+            </section>
+            
+            <div class="gdoc-post__readmore">
+                <a class="flex-inline align-center fake-link" title="Read full post" href="/blog/posts/helm-tips/">Read full post</a>
+            </div>
+            
+        </article>
+    
 
                 
 
@@ -230,7 +301,7 @@ Chartのスケルトン生成 $ helm create first-app Creating first-app $ tree 
 
 
 
-<script defer src="/blog/js/en.search.min.bb68f3c55598eb887ed74d0d74df18bf902fc91c40d779f66611b790a4a056ac.js"></script>
+<script defer src="/blog/js/en.search.min.7cefa3767ebaef4ef5d5a84f8bda59777804b737e33521f452d54f4066982780.js"></script>
 
 
 
