@@ -1,7 +1,7 @@
 ---
 title: "Helm Tips"
 date: 2020-12-06T13:49:40+09:00
-draft: true
+draft: false
 toc: true
 tags:
   - k8s
