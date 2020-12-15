@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Kerfume Blog</title>
-    <link>https://keisunagawa.github.io/blog/tags/</link>
-    <description>Recent content in Tags on Kerfume Blog</description>
+    <title>Tags on くらげ.log</title>
+    <link>https://blog.kerfume.me/tags/</link>
+    <description>Recent content in Tags on くらげ.log</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sun, 06 Dec 2020 17:31:55 +0900</lastBuildDate>
     
-	<atom:link href="https://keisunagawa.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.kerfume.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>helm</title>
-      <link>https://keisunagawa.github.io/blog/tags/helm/</link>
+      <link>https://blog.kerfume.me/tags/helm/</link>
       <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
       
-      <guid>https://keisunagawa.github.io/blog/tags/helm/</guid>
+      <guid>https://blog.kerfume.me/tags/helm/</guid>
       <description></description>
     </item>
     
     <item>
       <title>k8s</title>
-      <link>https://keisunagawa.github.io/blog/tags/k8s/</link>
+      <link>https://blog.kerfume.me/tags/k8s/</link>
       <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
       
-      <guid>https://keisunagawa.github.io/blog/tags/k8s/</guid>
+      <guid>https://blog.kerfume.me/tags/k8s/</guid>
       <description></description>
     </item>
     
