@@ -1,7 +1,7 @@
 ---
 title: "Gatekeeper Memo"
 date: 2020-12-13T15:47:15+09:00
-draft: true
+draft: false
 toc: true
 tags:
   - k8s

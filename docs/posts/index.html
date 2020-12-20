@@ -117,6 +117,29 @@
             
             
                 <span class="flex">
+                    <a href="/posts/gatekeeper-memo/" class="gdoc-nav__entry ">
+                        Gatekeeper Memo
+                    </a>
+                </span>
+            
+            
+
+            
+            </li>
+            
+            
+            
+
+            
+            
+            
+            
+            
+
+            <li>
+            
+            
+                <span class="flex">
                     <a href="/posts/helm-template/" class="gdoc-nav__entry ">
                         Helm Template Tips
                     </a>
@@ -177,6 +200,48 @@
 
             <div class="gdoc-page">
                 
+    
+        <article class="gdoc-markdown gdoc-post">
+            <header class="gdoc-post__header">
+                <h1 class="gdoc-post__title"><a href="/posts/gatekeeper-memo/">Gatekeeper Memo</a></h1>
+                <div class="gdoc-post__date">
+                    <svg class="icon date"><use xlink:href="#date"></use></svg>
+                    <time datetime="2020-12-13T15:47:15&#43;09:00">
+                        
+                        Dec 13, 2020
+                    </time>
+                </div>
+            </header>
+            <section>
+                この記事は FOLIO Advent Calendar 2020 20日目の記事です
+前回の記事でhelmを交えたargoCDの話をすると言ったな、あれは嘘だ
+調べてて面白そうだったので今回は Gatekeeper で利用されるpolicy記述言語Regoについてのおぼえ書きということにさせていただきます
+Gatekeeper policy記述言語Regoを利用してk8s上のマニフェストに対してpolicyを設定できるツール
+実装的にはk8s側ではAdmission Webhooks, Regoを利用するためにOPA, それぞれを利用して作られています
+これによってk8sマニフェストに対してpolicy制限を実現し、特定のキーの利用の強制や逆に制限をかけることができる
+ 今回はそのpolicyを記述するための言語Regoについて書きます
+実際にGatekeeperを触ってからの方がwhyを理解しやすいと思うのでREADMEの How to Use Gatekeeperを実施してから
+読むのを推奨します
+Rego policy記述言語
+一般的な逐次処理を記載していくタイプの言語とは違い
+宣言的に条件を記載していき、結果値を得ることを目的としている
+prologとか定理証明系で使われている言語の流れを汲んでいるらしい(よく知らない)
+playgroundも存在し、以降のコードスニペットはすべてplayground上で動くものを記載している
+変数 x := 3 regoの変数には利用方法が二種類ある
+ひとつは一般的なプログラミング言語同様値を束縛するためのもの
+もうひとつは少し曲者で未束縛の変数を利用した場合にその変数が取りうる可能性を持つ値の範囲で束縛する
+この場合「束縛」という表現は正しくないと思うが、自分的な理解しやすい表現なのであえてこう表現する
+x := [1, 2, 3] y { some i x[i] i == 0 # 1や2を指定してもtrue } 上記の例では i は x のindexの範囲の値を取るため i は0もしくは1もしくは2となる
+ルール構文 &lt;ruleName&gt; { .. } に関しては今の所説明をしていないが後述する、一旦は一般的なプログラミング言語でいう
+ブロック構文に名前がついたものとでも思っていただければいい
+Regoでは代入式を除く殆どの式が値の絞り込みを行うためのもので、上記の例でもルール y の2行目 x[i] の時点では
+            </section>
+            
+            <div class="gdoc-post__readmore">
+                <a class="flex-inline align-center fake-link" title="Read full post" href="/posts/gatekeeper-memo/">Read full post</a>
+            </div>
+            
+        </article>
     
         <article class="gdoc-markdown gdoc-post">
             <header class="gdoc-post__header">
@@ -301,7 +366,7 @@ Local Chartは helm install &lt;release名&gt; &lt;chart dir&gt; とすること
 
 
 
-<script defer src="/js/en.search.min.0dc9823163521c4a3450973ba0878579aa966470088edb93c1704f35f25ab0d3.js"></script>
+<script defer src="/js/en.search.min.b5b4cd484e244fad7dff09c07d0c2dadee431187cbe995e5965dd0f8af8f91ed.js"></script>
 
 
 

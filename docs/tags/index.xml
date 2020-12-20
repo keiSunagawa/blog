@@ -5,10 +5,46 @@
     <link>https://blog.kerfume.me/tags/</link>
     <description>Recent content in Tags on くらげ.log</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 06 Dec 2020 17:31:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 13 Dec 2020 15:47:15 +0900</lastBuildDate>
     
 	<atom:link href="https://blog.kerfume.me/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>gatekeeper</title>
+      <link>https://blog.kerfume.me/tags/gatekeeper/</link>
+      <pubDate>Sun, 13 Dec 2020 15:47:15 +0900</pubDate>
+      
+      <guid>https://blog.kerfume.me/tags/gatekeeper/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>k8s</title>
+      <link>https://blog.kerfume.me/tags/k8s/</link>
+      <pubDate>Sun, 13 Dec 2020 15:47:15 +0900</pubDate>
+      
+      <guid>https://blog.kerfume.me/tags/k8s/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>opa</title>
+      <link>https://blog.kerfume.me/tags/opa/</link>
+      <pubDate>Sun, 13 Dec 2020 15:47:15 +0900</pubDate>
+      
+      <guid>https://blog.kerfume.me/tags/opa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rego</title>
+      <link>https://blog.kerfume.me/tags/rego/</link>
+      <pubDate>Sun, 13 Dec 2020 15:47:15 +0900</pubDate>
+      
+      <guid>https://blog.kerfume.me/tags/rego/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>helm</title>
@@ -16,15 +52,6 @@
       <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
       
       <guid>https://blog.kerfume.me/tags/helm/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>k8s</title>
-      <link>https://blog.kerfume.me/tags/k8s/</link>
-      <pubDate>Sun, 06 Dec 2020 17:31:55 +0900</pubDate>
-      
-      <guid>https://blog.kerfume.me/tags/k8s/</guid>
       <description></description>
     </item>
     
