@@ -7,6 +7,11 @@ pygmentsUseClasses = true
 pygmentsCodeFences = true
 disablePathToLower = true
 
+enableGitInfo = true
+timeout = 180000
+
+# [taxonomies]
+#   tag = "tags"
 # Needed for mermaid shortcodes
 [markup]
   [markup.goldmark.renderer]
@@ -15,3 +20,7 @@ disablePathToLower = true
   [markup.tableOfContents]
     startLevel = 1
     endLevel = 9
+
+[params]
+  geekdocToC = 3
+  geekdocSearch = true

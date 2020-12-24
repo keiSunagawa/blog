@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on くらげ.log</title>
+    <link>https://blog.kerfume.me/tags/docker/</link>
+    <description>Recent content in docker on くらげ.log</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 24 Dec 2020 14:55:09 +0900</lastBuildDate>
+    
+	<atom:link href="https://blog.kerfume.me/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>k8s 1.20の更新後のEKSのコンテナランタイムについて</title>
+      <link>https://blog.kerfume.me/posts/eks-containerd-k8s-120/</link>
+      <pubDate>Thu, 24 Dec 2020 14:55:09 +0900</pubDate>
+      
+      <guid>https://blog.kerfume.me/posts/eks-containerd-k8s-120/</guid>
+      <description>背景 k8s 1.20よりdocker用のCRIであるdockershimがサポートされなくなるので
+それに伴いeksではなにをすればいいのか、コンテナランタイムの代替えとしては何を利用するのかを調べた
+コンテナランタイム 文字通りコンテナを実行するモジュール
+現在の選択肢としてはdocker, containerd, CRI-Oなどがある
+k8sではコンテナランタイムに対してCRIという規約に従ったgrpcサーバを要求する
+CRI(ContainerRuntimeInterface) k8sがコンテナランタイムに要求するインタフェースの規約
+コンテナランタイムはこれに則ったgrpcサーバを用意する必要がある
+k8s自体元々(1.12より前)は利用できるコンテナランタイムがdockerのみだったが
+他のランタイムも利用できるようにするためにこの規約を定めた
+が、当然docker自身はこの規約に則ったインタフェースは持っていないため
+docker用のCRIとしてk8s側がdockershimというものを用意していた
+k8s 1.20 Dockershimが非推奨になった
+以後Dockershimのメンテがされなくなるので他のコンテナランタイムを利用してね、と公式からのアナウンスがある
+containerdやCRI-OはCRIがネイティブサポートされている
+on EKS 今回の本題
+EKSではどう対応されるのかを調べる
+2020/12/24時点
+AmazonLinux最適化AMIではコンテナランタイムは引き続きdockerだった
+$ kube get nodes -o wide NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME ip-xxx-xxx-xxx-xxx.ap-northeast-1.compute.internal Ready &amp;lt;none&amp;gt; 114m v1.18.9-eks-d1db3c xxx.xxx.xxx.xxx &amp;lt;none&amp;gt; Amazon Linux 2 4.14.209-160.335.amzn2.x86_64 docker://19.3.6 Bottlerocket最適化AMIの場合containerdらしいけどこちらは
+cluster managed node groupを利用している場合は現在選択できない
+Fargateの場合はcontainerdが採用されているようだ
+$ kube get nodes -o wide NAME STATUS ROLES AGE VERSION INTERNAL-IP EXTERNAL-IP OS-IMAGE KERNEL-VERSION CONTAINER-RUNTIME fargate-ip-xxx-xxx-xxx-xxx.</description>
+    </item>
+    
+  </channel>
+</rss>
